@@ -24,6 +24,12 @@ function calculator() {
       if (workDay > 25) {
         salary += 300000;
       }
+    } else {
+      if (productivity < 3120 && productivity >= 3000) {
+        salary = productivity * 750 + productivity * 125 + nightShift * 50000;
+      } else {
+        salary = productivity * 650 + productivity * 125 + nightShift * 50000;
+      }
     }
     document.getElementById(
       "salary"
@@ -31,7 +37,11 @@ function calculator() {
       style: "currency",
       currency: "VND",
     })}`;
-  } else {
+  } else if (fullTime.checked) {
     alert("Đang viết code mà buồn ngủ quá nên ngủ đã,mai viết tiếp 🥹");
+  } else {
+    alert(
+      "Rồi bà không chọn FullTime hay PartTime sao tui biết mà tính cho bà  🤣🤣"
+    );
   }
 }
