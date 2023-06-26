@@ -14,9 +14,7 @@ function calculator() {
       } else {
         salary += 500 * 1100 + 500 * 1200 + (productivity - 4120) * 1300;
       }
-      if (point >= 93 && point < 95) {
-        salary += 100000;
-      } else if (point > 95) {
+      if (point >= 93) {
         salary += 200000;
       } else {
         salary += 0;
