@@ -31,5 +31,7 @@ function calculator() {
       style: "currency",
       currency: "VND",
     })}`;
+  } else {
+    alert("Đang viết code mà buồn ngủ quá nên ngủ đã,mai viết tiếp");
   }
 }
