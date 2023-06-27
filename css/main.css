@@ -189,7 +189,7 @@ iframe {
 }
 
 .wrap-contact100 {
-  width: 60%;
+  width: 70%;
   min-height: 100vh;
   border-radius: 2px;
   padding: 20px 20px 30px 40px;
@@ -211,7 +211,7 @@ iframe {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding-bottom: 68px;
 }
 
