@@ -239,7 +239,9 @@ iframe {
   border-bottom: 2px solid #dbdbdb;
   margin-bottom: 45px;
 }
-
+#hidden {
+  margin-top: -70px;
+}
 .label-input100 {
   font-size: 18px;
   color: #999999;
