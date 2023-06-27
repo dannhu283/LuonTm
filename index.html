@@ -12,26 +12,6 @@
     />
     <!--===============================================================================================-->
     <link
-      rel="stylesheet"
-      type="text/css"
-      href="./vendor/bootstrap/css/bootstrap.min.css"
-    />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="./fonts/font-awesome-4.7.0/css/font-awesome.min.css"
-    />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="./vendor/animate/animate.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!--===============================================================================================-->
-    <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
@@ -60,12 +40,17 @@
           <ul>
             <li class="type">
               <input type="radio" name="selector" id="fullTime" />
-              <label for="fullTime">Full-Time</label>
+              <label for="fullTime">Full-Time <br>(Có BH)</label>
               <div class="check"></div>
             </li>
             <li class="type">
               <input type="radio" name="selector" id="partTime" />
               <label for="partTime">Part-Time</label>
+              <div class="check"></div>
+            </li>
+            <li class="type">
+              <input type="radio" name="selector" id="fullTimeK" />
+              <label for="fullTimeK">7 tiếng rưỡi</label>
               <div class="check"></div>
             </li>
           </ul>
@@ -133,20 +118,26 @@
             </div>
           </form>
         </div>
+        <div
+        class="wrap-input100 validate-input"
+        data-validate="Name is required" id="hidden"
+      >
+        <h2>Phép Năm---Không nghỉ thì khỏi nhập nhen bà </h2>
+        <input
+          class="input100"
+          type="number"
+          name="name"
+          placeholder="Nghỉ nhiêu ngày vậy bà  ..."
+          id="annual"
+        />
+        <span class="focus-input100"></span>
+      </div>
         <div class="end d-flex">
           <button class="button-53 me-5" role="button" onclick="calculator()">Tính Lương</button>
           <div id="salary" class="xuatTien"></div>
         </div>
       </div>
     </div>
-
-    <!--===============================================================================================-->
-    <script src="./vendor/jquery/jquery.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="./vendor/animsition/js/animsition.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="./vendor/bootstrap/js/popper.min.js"></script>
-    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
     <!--===============================================================================================-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
