@@ -36,10 +36,10 @@ function calculator() {
       currency: "VND",
     })}`;
   } else if (fullTime.checked) {
-    alert("Đang viết code mà buồn ngủ quá nên ngủ đã,mai viết tiếp 🥹");
+    alert("Đang viết code mà buồn ngủ quá nên ngủ đã,mai viết tiếp!!");
   } else {
     alert(
-      "Rồi bà không chọn FullTime hay PartTime sao tui biết mà tính cho bà  🤣🤣"
+      "Rồi bà không chọn FullTime hay PartTime sao tui biết mà tính cho bà???"
     );
   }
 }
