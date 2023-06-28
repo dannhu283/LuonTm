@@ -3,7 +3,7 @@ function calculator() {
   let point = Math.floor(+document.getElementById("point").value);
   let workDay = Math.floor(+document.getElementById("workDay").value);
   let nightShift = Math.floor(+document.getElementById("nightShift").value);
-  let annual = Math.floor(+document.getElementById("annual").value);
+  let annual = Math.floor(+document.getElementById("hiddenInput").value);
   let salary = 0;
   if (partTime.checked) {
     if (productivity >= 3120) {
@@ -148,4 +148,14 @@ function calculator() {
       "Rồi bà không chọn FullTime hay PartTime sao tui biết mà tính cho bà???"
     );
   }
+}
+var input = document.getElementById("hiddenInput");
+var h2 = document.getElementById("hidden");
+function showInput() {
+  h2.style.display = "block";
+  input.style.display = "block";
+}
+function hiddenInput() {
+  h2.style.display = "none";
+  input.style.display = "none";
 }

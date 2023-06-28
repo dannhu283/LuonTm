@@ -9,6 +9,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-size: 15px;
 }
 
 body,
@@ -479,7 +480,7 @@ ul li label {
   height: 30px;
   z-index: 9;
   cursor: pointer;
-  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
 }
 
 ul li:hover label {

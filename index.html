@@ -40,17 +40,17 @@
           <ul>
             <li class="type">
               <input type="radio" name="selector" id="fullTime" />
-              <label for="fullTime">Full-Time <br>(Có BH)</label>
+              <label for="fullTime" onclick="showInput()">Full-Time <br>(Có BH)</label>
               <div class="check"></div>
             </li>
             <li class="type">
               <input type="radio" name="selector" id="partTime" />
-              <label for="partTime">Part-Time</label>
+              <label for="partTime" onclick="hiddenInput()">Part-Time</label>
               <div class="check"></div>
             </li>
             <li class="type">
               <input type="radio" name="selector" id="fullTimeK" />
-              <label for="fullTimeK">7 tiếng rưỡi</label>
+              <label for="fullTimeK" onclick="hiddenInput()">7 tiếng rưỡi</label>
               <div class="check"></div>
             </li>
           </ul>
@@ -120,7 +120,7 @@
         </div>
         <div
         class="wrap-input100 validate-input"
-        data-validate="Name is required" id="hidden"
+        data-validate="Name is required"id="hidden" style="display: none;"
       >
         <h2>Phép Năm---Không nghỉ thì thôi nè! </h2>
         <input
@@ -128,7 +128,8 @@
           type="number"
           name="name"
           placeholder="Nghỉ nhiêu ngày vậy bà  ..."
-          id="annual"
+          id="hiddenInput"
+          style="display: none;"
         />
         <span class="focus-input100"></span>
       </div>
