@@ -1,9 +1,9 @@
 function calculator() {
-  let productivity = +document.getElementById("productivity").value;
-  let point = +document.getElementById("point").value;
-  let workDay = +document.getElementById("workDay").value;
-  let nightShift = +document.getElementById("nightShift").value;
-  let annual = +document.getElementById("annual").value;
+  let productivity = Math.floor(+document.getElementById("productivity").value);
+  let point = Math.floor(+document.getElementById("point").value);
+  let workDay = Math.floor(+document.getElementById("workDay").value);
+  let nightShift = Math.floor(+document.getElementById("nightShift").value);
+  let annual = Math.floor(+document.getElementById("annual").value);
   let salary = 0;
   if (partTime.checked) {
     if (productivity >= 3120) {
@@ -64,8 +64,36 @@ function calculator() {
         style: "currency",
         currency: "VND",
       })}`;
+    } else if (productivity >= 3000 && productivity < 4160) {
+      salary =
+        nightShift * 50000 +
+        productivity * 750 +
+        productivity * 125 -
+        1602432 +
+        annual * 150080;
+      if (productivity >= 3360 && workDay > 25) {
+        salary += 250000;
+      }
+      document.getElementById(
+        "salary"
+      ).innerHTML = `Tổng lương : ${salary.toLocaleString("en-US", {
+        style: "currency",
+        currency: "VND",
+      })}`;
+      // alert("Tui chưa có đơn giá cụ thể,chờ thêm đi bà!!");
     } else {
-      alert("Tui chưa có đơn giá cụ thể,chờ thêm đi bà!!");
+      salary =
+        productivity * 650 +
+        productivity * 125 +
+        nightShift * 50000 +
+        annual * 150080 -
+        1602432;
+      document.getElementById(
+        "salary"
+      ).innerHTML = `Tổng lương : ${salary.toLocaleString("en-US", {
+        style: "currency",
+        currency: "VND",
+      })}`;
     }
   } else if (fullTimeK.checked) {
     if (productivity >= 4160) {
@@ -94,8 +122,26 @@ function calculator() {
         style: "currency",
         currency: "VND",
       })}`;
+    } else if (productivity >= 3000 && productivity < 4160) {
+      salary = nightShift * 50000 + productivity * 750 + productivity * 125;
+      if (productivity >= 3360 && workDay > 25) {
+        salary += 250000;
+      }
+      document.getElementById(
+        "salary"
+      ).innerHTML = `Tổng lương : ${salary.toLocaleString("en-US", {
+        style: "currency",
+        currency: "VND",
+      })}`;
+      // alert("Tui chưa có đơn giá cụ thể,chờ thêm đi bà!!");
     } else {
-      alert("Tui chưa có đơn giá cụ thể,chờ thêm đi bà!!");
+      salary = productivity * 650 + productivity * 125 + nightShift * 50000;
+      document.getElementById(
+        "salary"
+      ).innerHTML = `Tổng lương : ${salary.toLocaleString("en-US", {
+        style: "currency",
+        currency: "VND",
+      })}`;
     }
   } else {
     alert(
