@@ -58,7 +58,7 @@ function calculator() {
       if (workDay > 25) {
         salary += 500000;
       }
-      if(productivity>5000){
+      if(productivity>=5000){
         salary+=500000;
       }
       document.getElementById(
