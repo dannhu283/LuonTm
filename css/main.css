@@ -4,6 +4,15 @@
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
+.firework {
+  position: fixed;
+  width: 8px;
+  height: 15px;
+  border-radius: 25%;
+  background-color: rgb(219, 5, 34);
+  border-radius: 50%;
+  animation: firework 2s forwards;
+}
 
 * {
   margin: 0px;
@@ -595,5 +604,16 @@ input[type="radio"]:checked ~ label {
   .button-53 {
     padding: 0.75rem 3rem;
     font-size: 1.25rem;
+  }
+}
+
+@keyframes firework {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1500px) rotate(720deg);
+    opacity: 0;
   }
 }
