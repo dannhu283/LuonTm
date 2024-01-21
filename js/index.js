@@ -4,7 +4,14 @@ function calculator() {
   let workDay = Math.floor(+document.getElementById("workDay").value);
   let nightShift = Math.floor(+document.getElementById("nightShift").value);
   let annual = Math.floor(+document.getElementById("hiddenInput").value);
+  let workmonth = Math.floor(+document.getElementById("monthwork").value);
   let salary = 0;
+  if (isNaN(workmonth) || workmonth <= 0) {
+    alert(
+      "Vui lòng nhập số tháng làm việc để tui tính tiền thưởng điểm chất lượng nữa ba"
+    );
+    return;
+  }
   if (partTime.checked) {
     if (productivity >= 3120) {
       salary = 3120 * 938 + 390000 + nightShift * 50000;
@@ -15,19 +22,37 @@ function calculator() {
       } else {
         salary += 500 * 1100 + 500 * 1200 + (productivity - 4120) * 1300;
       }
-      if (point >= 93) {
-        salary += 200000;
-      } else {
-        salary += 0;
+
+      if (workmonth < 6) {
+        if (point >= 95) {
+          salary += 150000;
+        } else {
+          salary -= productivity * 0.05 * 938;
+        }
+      } else if (workmonth >= 6) {
+        if (point >= 98) {
+          salary += 300000;
+        } else if (point >= 96) {
+          salary += 200000;
+        } else {
+          salary -= productivity * 0.05 * 938;
+        }
       }
+
       if (workDay > 25) {
         salary += 300000;
       }
     } else {
       if (productivity < 3120 && productivity >= 3000) {
         salary = productivity * 750 + productivity * 125 + nightShift * 50000;
+        if ((workmonth < 6 && point < 95) || (workmonth > 6 && point < 96)) {
+          salary -= productivity * 0.05 * 750;
+        }
       } else {
         salary = productivity * 650 + productivity * 125 + nightShift * 50000;
+        if ((workmonth < 6 && point < 95) || (workmonth > 6 && point < 96)) {
+          salary -= productivity * 0.05 * 650;
+        }
       }
     }
     document.getElementById(
@@ -50,16 +75,27 @@ function calculator() {
           1200 * (productivity - 4660) +
           1300 * (productivity - 5160);
       }
-      if (point < 95 && point >= 93) {
-        salary += 200000;
-      } else if (point >= 95) {
-        salary += 400000;
+      if (workmonth < 6) {
+        if (point >= 95) {
+          salary += 150000;
+        } else {
+          salary -= productivity * 0.05 * 938;
+        }
+      } else if (workmonth >= 6) {
+        if (point >= 98) {
+          salary += 500000;
+        } else if (point >= 96) {
+          salary += 300000;
+        } else {
+          salary -= productivity * 0.05 * 938;
+        }
       }
+
       if (workDay > 25) {
         salary += 500000;
       }
-      if(productivity>=5000){
-        salary+=500000;
+      if (productivity >= 5000) {
+        salary += 500000;
       }
       document.getElementById(
         "salary"
@@ -77,13 +113,15 @@ function calculator() {
       if (productivity >= 3360 && workDay > 25) {
         salary += 250000;
       }
+      if ((workmonth < 6 && point < 95) || (workmonth > 6 && point < 96)) {
+        salary -= productivity * 0.05 * 750;
+      }
       document.getElementById(
         "salary"
       ).innerHTML = `Tổng lương : ${salary.toLocaleString("en-US", {
         style: "currency",
         currency: "VND",
       })}`;
-      // alert("Tui chưa có đơn giá cụ thể,chờ thêm đi bà!!");
     } else {
       salary =
         productivity * 650 +
@@ -91,6 +129,9 @@ function calculator() {
         nightShift * 50000 +
         annual * 150080 -
         1602432;
+      if ((workmonth < 6 && point < 95) || (workmonth > 6 && point < 96)) {
+        salary -= productivity * 0.05 * 650;
+      }
       document.getElementById(
         "salary"
       ).innerHTML = `Tổng lương : ${salary.toLocaleString("en-US", {
@@ -111,11 +152,23 @@ function calculator() {
           1200 * (productivity - 4660) +
           1300 * (productivity - 5160);
       }
-      if (point < 95 && point >= 93) {
-        salary += 200000;
-      } else if (point >= 95) {
-        salary += 400000;
+
+      if (workmonth < 6) {
+        if (point >= 95) {
+          salary += 150000;
+        } else {
+          salary -= productivity * 0.05 * 938;
+        }
+      } else if (workmonth >= 6) {
+        if (point >= 98) {
+          salary += 500000;
+        } else if (point >= 96) {
+          salary += 300000;
+        } else {
+          salary -= productivity * 0.05 * 938;
+        }
       }
+
       if (workDay > 25) {
         salary += 500000;
       }
@@ -130,15 +183,20 @@ function calculator() {
       if (productivity >= 3360 && workDay > 25) {
         salary += 250000;
       }
+      if ((workmonth < 6 && point < 95) || (workmonth > 6 && point < 96)) {
+        salary -= productivity * 0.05 * 750;
+      }
       document.getElementById(
         "salary"
       ).innerHTML = `Tổng lương : ${salary.toLocaleString("en-US", {
         style: "currency",
         currency: "VND",
       })}`;
-      // alert("Tui chưa có đơn giá cụ thể,chờ thêm đi bà!!");
     } else {
       salary = productivity * 650 + productivity * 125 + nightShift * 50000;
+      if ((workmonth < 6 && point < 95) || (workmonth > 6 && point < 96)) {
+        salary -= productivity * 0.05 * 650;
+      }
       document.getElementById(
         "salary"
       ).innerHTML = `Tổng lương : ${salary.toLocaleString("en-US", {
@@ -152,6 +210,7 @@ function calculator() {
     );
   }
 }
+
 var input = document.getElementById("hiddenInput");
 var h2 = document.getElementById("hidden");
 function showInput() {
