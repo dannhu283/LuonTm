@@ -182,8 +182,9 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-image: url(../img/Animation\ -\ 1705932152458.gif);
+  background-image: url(../img/1520144552243.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   z-index: 1;
 }
