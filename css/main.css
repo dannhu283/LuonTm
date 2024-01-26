@@ -182,8 +182,8 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  /* fix */
-  background-image: url(../img/1520144552243.jpg);
+  background-image: url(../img/1520144552243.jp);
+  background-size: cover;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
